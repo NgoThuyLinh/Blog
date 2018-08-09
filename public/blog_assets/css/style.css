@@ -445,6 +445,8 @@ nav i {
 }
 ul.submenu {
 	display:none;	
+	overflow-y: scroll; 
+	height: 310px
 }
 
 nav li:hover > ul.submenu {
@@ -1163,6 +1165,7 @@ ul.bullet {
 	padding:8px;
 	letter-spacing: 2px;
 }
+
 .post .comments {
 	letter-spacing: 2px;
     padding:100px 50px 0 50px;	
@@ -1423,9 +1426,9 @@ ul.bullet {
 	margin:0 0 10px 0;
 }
 .latest-posts .info-post h5 a {
-	font-size:14px;
+	font-size:13px;
 	font-family: 'Playfair Display', serif;
-	letter-spacing:1.5px;
+	letter-spacing:0.5px;
 	line-height:1.5;
 }
 .latest-posts .info-post .date {

@@ -76,10 +76,24 @@
                     @endauth
                 </div>
             @endif
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
 
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    {{ $name }}
                 </div>
 
                 <div class="links">
@@ -88,6 +102,18 @@
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div>
+                <div>
+                    <form action="upload" method="POST" role="form" enctype="multipart/form-data">
+                        @csrf
+                        <legend>Form title</legend>
+                    
+                        <div class="form-group">
+                            <label for="">Upload</label>
+                            <input multiple="true" type="file" class="form-control" name="images[]" placeholder="Input field">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
                 </div>
             </div>
         </div>
